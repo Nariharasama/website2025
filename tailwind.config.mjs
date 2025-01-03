@@ -10,8 +10,15 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'dark': "#03256C",
+        'deep':"#2541B2",
+        'mid':"#1768AC",
+        'bright':"#06BEE1",
       },
     },
+    fontFamily: {
+      space: ["Space Grotesk", "sans-serif"],
+    }
   },
   plugins: [],
 };
