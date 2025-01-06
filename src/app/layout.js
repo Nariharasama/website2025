@@ -1,7 +1,8 @@
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import TopLogo from "@/app/TopLogo";
-
+import localFont from 'next/font/local'
+import {Noto_Sans_JP} from "next/font/google";
 
 export const metadata = {
   title: "design-hu",
@@ -21,11 +22,18 @@ const spaceGrotesk = Space_Grotesk({
     variable: '--font-space',
 })
 
+const notoSans = Noto_Sans_JP({
+    subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-space',
+})
+
+
 
 
 export default function Layout({ children }) {
   return (
-    <html lang="en"  className={`${spaceGrotesk.variable}`}>
+    <html lang="en"  className={`${notoSans.variable}`}>
       <body className={"flex h-full w-full"}>
       <TopLogo/>
         {children}

@@ -18,6 +18,9 @@ export default {
     },
     fontFamily: {
       space: ["Space Grotesk", "sans-serif"],
+      train:["Train One", "cursive"],
+      noto: ["Noto_Sans_JP", "sans-serif"],
+      pop: ["Poppins"],
     }
   },
   plugins: [],

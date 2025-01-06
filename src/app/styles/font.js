@@ -1,4 +1,4 @@
-import { Space_Grotesk } from "next/font/google";
+import { Space_Grotesk,Noto_Sans } from "next/font/google";
 
 
 const SpaceLight = Space_Grotesk({
@@ -24,6 +24,7 @@ const SpaceBold = Space_Grotesk({
     weights: 700,
 
 })
+
 
 export {SpaceLight, SpaceReg, SpaceMed, SpaceBold}
 
