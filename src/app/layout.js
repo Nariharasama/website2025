@@ -34,11 +34,10 @@ const notoSans = Noto_Sans_JP({
 export default function Layout({ children }) {
   return (
     <html lang="en"  className={`${notoSans.variable}`}>
-      <body className={"flex h-full w-full"}>
-      <TopLogo/>
+    <body className={"flex h-full w-full"}>
+    <TopLogo/>
         {children}
       </body>
     </html>
-
   );
 }

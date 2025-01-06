@@ -1,5 +1,4 @@
 import Image from "next/image";
-import {SpaceReg} from "@/app/styles/font";
 
 export default function TopLogo() {
 
