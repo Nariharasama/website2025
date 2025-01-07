@@ -14,6 +14,7 @@ export default {
         'deep':"#2541B2",
         'mid':"#1768AC",
         'bright':"#06BEE1",
+        'red1':"#E60012",
       },
     },
     fontFamily: {

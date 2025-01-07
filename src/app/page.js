@@ -12,6 +12,7 @@ import {
     useVelocity
 } from "motion/react"
 import {wrap} from "motion";
+import {useRouter} from "next/navigation";
 
 function Logo(){
     return (
@@ -49,14 +50,13 @@ function ScrollInfo(){
         };
     }, []);
     return (
-        <div className={"w-full overflow-hidden flex h-[160px] align-middle items-center justify-center fixed bottom-0 "} ref={scope}>
+        <div className={"w-full overflow-hidden flex h-[160px] align-middle items-center justify-center absolute bottom-0"} ref={scope}>
             <motion.div initial={{opacity:0}} animate={{opacity: [0, 0, 1]}} transition={{
                 times: [0, 0.75, 1],
                 duration: 6,
             }} className={"w-full flex flex-col justify-center items-center"}>
-                <text className={"font-space text-dark text-[32px] font-regular"}>scroll down</text>
-                <Image src={"images/arrow_downward.svg"} alt={'down'} width={40} height={40}></Image>
-
+                <text className={"font-['Noto_Sans_JP'] text-black text-[24px] font-regular"}>Scroll Down</text>
+                <Image src={"homesvgs/arrow_downward.svg"} alt={'down'} width={40} height={40}></Image>
             </motion.div>
         </div>
     )
@@ -296,105 +296,121 @@ function ScrollText2({children, baseVelocity = 1000}) {
 
 
 export default function Home() {
+    const router = useRouter();
     return (
         <div className={'w-full flex flex-col overflow-hidden align-middle items-center justify-center'}>
             <div className={"h-dvh min-h-[1024px] w-full flex flex-col align-middle items-center justify-center"}>
                 <HomeSvgs/>
                 <ScrollInfo/>
             </div>
-            <div className={"w-full h-[1400px] flex flex-col align-middle items-center justify-center relative"}>
-                <motion.div className={"w-[3200px] flex flex-col  absolute top-0"}
-                            animate={{rotate: -15}}>
-                    <ScrollText baseVelocity={-0.5}>
-                        About Me&nbsp;
-                    </ScrollText>
-                    <ScrollText2 baseVelocity={0.5}>
-                        About Me&nbsp;
-                    </ScrollText2>
-                </motion.div>
-                <div className={"w-full flex items-center align-middle flex-col absolute top-[720px]"}>
-                    <div className={"w-[840px] h-full flex items-start align-middle flex-col"}>
-                        <text className={"font-['Noto_Sans_JP'] text-black font-medium text-[32px]"}>私について</text>
-                        <text
-                            className={"font-['Noto_Sans_JP'] text-[#E60012] font-bold text-[36px]"}>デザインは、人々の生活に技術を活かせるために
-                        </text>
-                        <div className={"w-full h-[80px] "}></div>
-                        <text className={"font-['Noto_Sans_JP'] text-black font-regular text-[20px]"}>はじめまして。
-                        </text>
-                        <text
-                            className={"font-['Noto_Sans_JP'] font-regular text-[20px]"}>私はNET技術を活用して、主にUI・UXを中心するデザイナーです。
-                        </text>
-                        <div className={"w-full h-[80px] "}></div>
-                        <text
-                            className={"font-['Noto_Sans_JP'] text-black font-regular text-[20px]"}>Webデザイナーとして、大量のページ動画と効果を確実に表現するため、
-                        </text>
-                        <text
-                            className={"font-['Noto_Sans_JP'] font-regular text-[20px]"}>Reactなどのプログラミングスキルを使って、プロトタイプを作成される。
-                        </text>
-                        <div className={"w-full h-[80px] "}></div>
-                        <text
-                            className={"font-['Noto_Sans_JP'] text-black font-regular text-[20px]"}>実際に、このページも自らデザインから作成まで作ったものです。
-                        </text>
-                        <text
-                            className={"font-['Noto_Sans_JP'] font-regular text-[20px]"}>ドメイン名購入以外完全に無料となります。
-                        </text>
-                        <div className={"w-full h-[80px] "}></div>
-                        <text
-                            className={"font-['Noto_Sans_JP'] text-black font-regular text-[20px]"}>このように、自分の発想をできるだけ詳しく伝えるように、
-                        </text>
-                        <text
-                            className={"font-['Noto_Sans_JP'] font-regular text-[20px]"}> みんなの生活に直接に関わるデザインをしています。
-                        </text>
-                        <div className={"w-full h-[80px] "}></div>
-                        <text
-                            className={"font-['Noto_Sans_JP'] text-black font-bold text-[24px] underline"}>More about
-                            this site
-                        </text>
-
-
-                    </div>
+            <div className={"w-full flex h-[2560px] flex-col align-middle items-center justify-center relative"}>
+                <div
+                    className={"w-full h-[2560px] flex flex-col align-middle items-center justify-center absolute top-0"}>
+                    <motion.div className={"w-[3200px] flex flex-col  absolute top-0"}
+                                animate={{rotate: -15}}>
+                        <ScrollText baseVelocity={-0.5}>
+                            About Me&nbsp;
+                        </ScrollText>
+                        <ScrollText2 baseVelocity={0.5}>
+                            About Me&nbsp;
+                        </ScrollText2>
+                    </motion.div>
+                    <motion.div className={"w-[3200px] flex flex-col  absolute top-[1400px]"}
+                                animate={{rotate: -15}}>
+                        <ScrollText baseVelocity={-0.5}>
+                            Project&nbsp;
+                        </ScrollText>
+                        <ScrollText2 baseVelocity={0.5}>
+                            Project&nbsp;
+                        </ScrollText2>
+                    </motion.div>
                 </div>
-            </div>
-            <div className={"w-full h-[1400px] flex flex-col align-middle items-center justify-center relative"}>
-                <motion.div className={"w-[3200px] flex flex-col  absolute top-0"}
-                            animate={{rotate: -15}}>
-                    <ScrollText baseVelocity={-0.5}>
-                        Project&nbsp;
-                    </ScrollText>
-                    <ScrollText2 baseVelocity={0.5}>
-                        Project&nbsp;
-                    </ScrollText2>
-                </motion.div>
-                <div className={"w-full flex items-center align-middle flex-col absolute top-[720px]"}>
-                    <div className={"w-[840px] h-full flex items-end align-middle flex-col"}>
-                        <text className={"font-['Noto_Sans_JP'] text-black font-medium text-[32px]"}>プロジェクト</text>
-                        <text
-                            className={"font-['Noto_Sans_JP'] text-[#E60012] font-bold text-[36px]"}>誰でも使える技術に
-                        </text>
-                        <div className={"w-full h-[80px] "}></div>
-                        <text
-                            className={"font-['Noto_Sans_JP'] text-black font-regular text-[20px]"}>新世代の技術力をみんなの生活に送って、人々のためのデザインです。
-                        </text>
-                        <text
-                            className={"font-['Noto_Sans_JP'] font-regular text-[20px]"}>誰でもいつでも快適的に利用できるように、技術と生活の切り口を探します。
-                        </text>
-                        <div className={"w-full h-[80px] "}></div>
-                        <text
-                            className={"font-['Noto_Sans_JP'] text-black font-bold text-[24px] underline"}>Portofolio
-                        </text>
+                <div
+                    className={"w-full h-[2560px] flex flex-col align-middle items-center justify-center absolute top-0"}>
+                    <div className={"w-full flex items-center align-middle flex-col absolute top-[640px]"}>
+                        <div className={"w-[840px] h-full flex items-start align-middle flex-col"}>
+                            <text className={"font-['Noto_Sans_JP'] text-black font-medium text-[32px]"}>私について
+                            </text>
+                            <text
+                                className={"font-['Noto_Sans_JP'] text-[#E60012] font-bold text-[36px]"}>デザインは、人々の生活に技術を活かせるために
+                            </text>
+                            <div className={"w-full h-[80px] "}></div>
+                            <text className={"font-['Noto_Sans_JP'] text-black font-regular text-[20px]"}>はじめまして。
+                            </text>
+                            <text
+                                className={"font-['Noto_Sans_JP'] font-regular text-[20px]"}>私はNET技術を活用して、主にUI・UXを中心するデザイナーです。
+                            </text>
+                            <div className={"w-full h-[80px] "}></div>
+                            <text
+                                className={"font-['Noto_Sans_JP'] text-black font-regular text-[20px]"}>Webデザイナーとして、大量のページ動画と効果を確実に表現するため、
+                            </text>
+                            <text
+                                className={"font-['Noto_Sans_JP'] font-regular text-[20px]"}>Reactなどのプログラミングスキルを使って、プロトタイプを作成される。
+                            </text>
+                            <div className={"w-full h-[80px] "}></div>
+                            <text
+                                className={"font-['Noto_Sans_JP'] text-black font-regular text-[20px]"}>実際に、このページも自らデザインから作成まで作ったものです。
+                            </text>
+                            <text
+                                className={"font-['Noto_Sans_JP'] font-regular text-[20px]"}>ドメイン名購入以外完全に無料となります。
+                            </text>
+                            <div className={"w-full h-[80px] "}></div>
+                            <text
+                                className={"font-['Noto_Sans_JP'] text-black font-regular text-[20px]"}>このように、自分の発想をできるだけ詳しく伝えるように、
+                            </text>
+                            <text
+                                className={"font-['Noto_Sans_JP'] font-regular text-[20px]"}> みんなの生活に直接に関わるデザインをしています。
+                            </text>
+                            <div className={"w-full h-[80px] "}></div>
+                            <text
+                                className={"font-['Noto_Sans_JP'] text-black font-bold text-[24px] underline hover:text-red1 cursor-pointer" } onClick={() => router.push('https://github.com/Nariharasama/website2025')}>More
+                                about
+                                this site
+                            </text>
+                        </div>
+                    </div>
+                    <div className={"w-full flex items-center align-middle flex-col absolute top-[2040px]"}>
+                        <div className={"w-[840px] h-full flex items-end align-middle flex-col"}>
+                            <text className={"font-['Noto_Sans_JP'] text-black font-medium text-[32px]"}>プロジェクト
+                            </text>
+                            <text
+                                className={"font-['Noto_Sans_JP'] text-[#E60012] font-bold text-[36px]"}>誰でも使える技術に
+                            </text>
+                            <div className={"w-full h-[80px] "}></div>
+                            <text
+                                className={"font-['Noto_Sans_JP'] text-black font-regular text-[20px]"}>新世代の技術力をみんなの生活に送って、人々のためのデザインです。
+                            </text>
+                            <text
+                                className={"font-['Noto_Sans_JP'] font-regular text-[20px]"}>誰でもいつでも快適的に利用できるように、技術と生活の切り口を探します。
+                            </text>
+                            <div className={"w-full h-[80px] "}></div>
+                            <text
+                                className={"font-['Noto_Sans_JP'] text-black font-bold text-[24px] underline hover:text-red1 cursor-pointer"}>Portofolio
+                            </text>
 
 
+                        </div>
                     </div>
                 </div>
             </div>
             <div
                 className={"w-full h-[128px] px-[56px] pt-[40px] flex flex-row items-center align-middle justify-center space-x-[16px]"}>
-                <text className={"font-['Noto_Sans_JP'] text-black text-[20px] font-medium"}>This site is deployed on vercel via
-                    Github.Please don't use this site for illegal purposes.
+                <text className={"font-['Noto_Sans_JP'] text-black text-[20px] font-medium"}>The site is deployed on
+                    vercel via
+                    Github.Don't use this site for illegal purposes.
                 </text>
-                <text className={"font-['Noto_Sans_JP'] text-black text-[20px] font-medium underline"}>Next.js</text>
-                <text className={"font-['Noto_Sans_JP'] text-black text-[20px] font-medium underline"}>Vercel</text>
-                <text className={"font-['Noto_Sans_JP'] text-black text-[20px] font-medium underline"}>Framer motion</text>
+                <div className={"flex cursor-pointer"} onClick={() => router.push('https://nextjs.org/')}>
+                    <text
+                        className={"font-['Noto_Sans_JP'] text-black text-[20px] font-medium underline "}
+                    >Next.js
+                    </text>
+                </div>
+                <text className={"font-['Noto_Sans_JP'] text-black text-[20px] font-medium underline cursor-pointer"}
+                      onClick={() => router.push('https://vercel.com/')}>Vercel
+                </text>
+                <text className={"font-['Noto_Sans_JP'] text-black text-[20px] font-medium underline cursor-pointer"}
+                      onClick={() => router.push('https://motion.dev/')}>Framer motion
+                </text>
             </div>
         </div>
 
