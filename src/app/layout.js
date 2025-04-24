@@ -9,10 +9,7 @@ export const metadata = {
 };
 
 export const viewport = {
-    width: "800",
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
+    width: "device-width",
 };
 
 const spaceGrotesk = Space_Grotesk({
