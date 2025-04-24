@@ -8,9 +8,6 @@ export const metadata = {
   title: "design-hu",
 };
 
-export const viewport = {
-    width: "device-width",
-};
 
 const spaceGrotesk = Space_Grotesk({
     subsets: ['latin'],
