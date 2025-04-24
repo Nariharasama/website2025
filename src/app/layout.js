@@ -9,7 +9,7 @@ export const metadata = {
 };
 
 export const viewport = {
-    width: "720",
+    width: "800",
     maximumScale: 1,
     userScalable: false,
     // Also supported by less commonly used
@@ -27,7 +27,6 @@ const notoSans = Noto_Sans_JP({
     display: 'swap',
     variable: '--font-space',
 })
-
 
 
 

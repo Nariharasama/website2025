@@ -13,25 +13,6 @@ import {
 } from "motion/react"
 import {wrap} from "motion";
 import {useRouter} from "next/navigation";
-
-function Logo(){
-    return (
-        <div className={"w-[936px] h-[72px] flex flex-row space-x-[32px] align-middle items-center justify-center"}>
-            <Image src={"/images/1.svg"} alt="logo" width={72} height={72}/>
-            <Image src={"/images/2.svg"} alt="logo" width={72} height={72}/>
-            <Image src={"/images/3.svg"} alt="logo" width={72} height={72}/>
-            <Image src={"/images/4.svg"} alt="logo" width={72} height={72}/>
-            <Image src={"/images/5.svg"} alt="logo" width={72} height={72}/>
-            <Image src={"/images/6.svg"} alt="logo" width={72} height={72}/>
-            <Image src={"/images/7.svg"} alt="logo" width={72} height={72}/>
-            <Image src={"/images/8.svg"} alt="logo" width={72} height={72}/>
-            <Image src={"/images/9.svg"} alt="logo" width={72} height={72}/>
-        </div>
-    )
-
-}
-
-
 function ScrollInfo(){
     const [scope,animate] = useAnimate()
     const handleScroll = () => {
@@ -64,6 +45,7 @@ function ScrollInfo(){
 
 }
 function HomeSvgs(){
+    //this check whether the movein animation is over
     const Isover=useRef(0)
     const [scope1,animate1] = useAnimate()
     const [scope2,animate2] = useAnimate()
@@ -81,11 +63,14 @@ function HomeSvgs(){
     const [scope14,animate14] = useAnimate()
     const [scope15,animate15] = useAnimate()
     const [scope16,animate16] = useAnimate()
+    const [scope16m,animate16m] = useAnimate()
     const [scope17,animate17] = useAnimate()
     const [scope18,animate18] = useAnimate()
     const [scope19,animate19] = useAnimate()
+    //define mousemove function
     const handleMouseMove = (event) => {
         if(Isover.current===0) return;
+        //if movein animation is over
         const x = event.clientX-1/2*window.innerWidth
         const y = event.clientY-1/2*window.innerHeight;
         animate1(scope1.current, {x: -68 - 0.05 * x, y: 143 + 0.08 * y}, {duration: 0, ease: "easeOut"})
@@ -104,15 +89,17 @@ function HomeSvgs(){
         animate14(scope14.current, {x: 428- 0.05 * x, y: 610 + 0.08 * y}, {duration: 0, ease: "easeOut"})
         animate15(scope15.current, {x: 1068 - 0.05 * x, y: -90 + 0.08 * y}, {duration: 0, ease: "easeOut"})
         animate16(scope16.current, {x: 275 - 0.02 * x, y: 365+ 0.05 * y}, {duration: 0, ease: "easeOut"})
+        animate16m(scope16m.current, {x: 380 - 0.02 * x, y: 365+ 0.05 * y}, {duration: 0, ease: "easeOut"})
         animate17(scope17.current, {x: 774- 0.05 * x, y: 579 + 0.08 * y}, {duration: 0, ease: "easeOut"})
         animate18(scope18.current, {x: 574 - 0.02 * x, y: 800 + 0.05 * y}, {duration: 0, ease: "easeOut"})
         animate19(scope19.current, {x: 1010- 0.05 * x, y: 800 + 0.08 * y}, {duration: 0, ease: "easeOut"})
 
     };
     useEffect(() => {
-        // 定义鼠标移动事件处理函数
-        // 在组件挂载时添加事件监听器
+        // all code in useEffect will run only once after the page is loaded
+        // add mousemove listener to the window(function locates above)
         window.addEventListener('mousemove', handleMouseMove);
+        // movein animation (all function run at the same time)
         animate1(scope1.current, {y: [-2000, 143]}, {duration: 2, ease: "circOut"})
         animate2(scope2.current, {y: [-2000, 314]}, {duration: 2, ease: "circOut"})
         animate3(scope3.current, {y: [-2000, 10]}, {duration: 2, ease: "circOut"})
@@ -129,13 +116,15 @@ function HomeSvgs(){
         animate14(scope14.current, {y: [-2000, 610]}, {duration: 2, ease: "circOut"})
         animate15(scope15.current, {y: [-2000, -90]}, {duration: 2, ease: "circOut"})
         animate16(scope16.current, {y: [-2000, 365]}, {duration: 2, ease: "circOut"})
+        animate16m(scope16m.current, {y: [-2000, 365]}, {duration: 2, ease: "circOut"})
         animate17(scope17.current, {y: [-2000, 579]}, {duration: 2, ease: "circOut"})
         animate18(scope18.current, {y: [-2000, 800]}, {duration: 2, ease: "circOut"})
         animate19(scope19.current, {y: [-2000, 800]}, {duration: 2, ease: "circOut"})
+        // confirm animation is over
         const timer = setTimeout(() => {
             Isover.current = 1
         }, 2500);
-        // 在组件卸载时移除事件监听器
+        // clear the time listener when the component unmounts
         return () => {
             clearTimeout(timer)
             window.removeEventListener('mousemove', handleMouseMove);
@@ -144,7 +133,7 @@ function HomeSvgs(){
 
     return(
         <div className={"flex w-full h-full align-middle items-center justify-center relative"}>
-            <div className={"w-[1440px] h-full absolute -translate-x-1/2 left-1/2"}>
+            <div className={"w-[1440px] h-full absolute "}>
                 <motion.div className={"flex absolute overflow-hidden"} initial={{x: -68, y: -2000}} ref={scope1}>
                     <Image src={"homesvgs/A2.svg"} alt={'1'} width={240} height={286.67}></Image>
                 </motion.div>
@@ -190,8 +179,11 @@ function HomeSvgs(){
                 <motion.div className={"flex absolute overflow-hidden"} initial={{x: 1068, y: -2000}} ref={scope15}>
                     <Image src={"homesvgs/W2.svg"} alt={'1'} width={240} height={222.8}></Image>
                 </motion.div>
-                <motion.div className={"flex absolute overflow-hidden"} initial={{x: 275, y: -2000}} ref={scope16}>
+                <motion.div className={"flex lg:hidden absolute overflow-hidden"} initial={{x: 380, y: -2000}} ref={scope16m}>
                     <Image src={"homesvgs/words.svg"} alt={'1'} width={720} height={212.79}></Image>
+                </motion.div>
+                <motion.div className={"hidden lg:flex absolute overflow-hidden"} initial={{x: 275, y: -2000}} ref={scope16}>
+                    <Image src={"homesvgs/words.svg"} alt={'2'} width={720} height={212.79}></Image>
                 </motion.div>
                 <motion.div className={"flex absolute overflow-hidden"} initial={{x: 774, y: -2000}} ref={scope17}>
                     <Image src={"homesvgs/Y2.svg"} alt={'1'} width={200} height={264.66}></Image>
@@ -226,8 +218,8 @@ function ScrollText({children, baseVelocity = 1000}) {
     useAnimationFrame((t, delta) => {
         let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
         /**
-         * This is what changes the direction of the scroll once we
-         * switch scrolling directions.
+         * This is what changes the direction of the scroll o
+         * directions.
          */
         if (velocityFactor.get() < 0) {
             directionFactor.current = -1;
@@ -328,11 +320,11 @@ export default function Home() {
                 <div
                     className={"w-full h-[2560px] flex flex-col align-middle items-center justify-center absolute top-0"}>
                     <div className={"w-full flex items-center align-middle flex-col absolute top-[640px]"}>
-                        <div className={"w-[840px] h-full flex items-start align-middle flex-col"}>
-                            <text className={"font-['Noto_Sans_JP'] text-black font-medium text-[32px]"}>私について
+                        <div className={"w-[660px] lg:w-[840px] h-full flex items-start align-middle flex-col"}>
+                            <text className={"font-['Noto_Sans_JP'] text-black font-medium text-[28px] lg:text-[32px]"}>私について
                             </text>
                             <text
-                                className={"font-['Noto_Sans_JP'] text-[#E60012] font-bold text-[36px]"}>デザインは、人々の生活に技術を活かせるために
+                                className={"font-['Noto_Sans_JP'] text-[#E60012] font-bold text-[30px] lg:text-[36px]"}>デザインは、人々の生活に技術を活かせるために
                             </text>
                             <div className={"w-full h-[80px] "}></div>
                             <text className={"font-['Noto_Sans_JP'] text-black font-regular text-[20px]"}>はじめまして。
@@ -370,11 +362,11 @@ export default function Home() {
                         </div>
                     </div>
                     <div className={"w-full flex items-center align-middle flex-col absolute top-[2040px]"}>
-                        <div className={"w-[840px] h-full flex items-end align-middle flex-col"}>
-                            <text className={"font-['Noto_Sans_JP'] text-black font-medium text-[32px]"}>プロジェクト
+                        <div className={"w-[660px] lg:w-[840px] h-full flex items-end align-middle flex-col"}>
+                            <text className={"font-['Noto_Sans_JP'] text-black font-medium text-[28px] lg:text-[32px]"}>プロジェクト
                             </text>
                             <text
-                                className={"font-['Noto_Sans_JP'] text-[#E60012] font-bold text-[36px]"}>誰でも使える技術に
+                                className={"font-['Noto_Sans_JP'] text-[#E60012] font-bold text-[30px] lg:text-[36px]"}>誰でも使える技術に
                             </text>
                             <div className={"w-full h-[80px] "}></div>
                             <text
@@ -394,23 +386,24 @@ export default function Home() {
                 </div>
             </div>
             <div
-                className={"w-full h-[128px] px-[56px] pt-[40px] flex flex-row items-center align-middle justify-center space-x-[16px]"}>
-                <text className={"font-['Noto_Sans_JP'] text-black text-[20px] font-medium"}>The site is deployed on
-                    vercel via
-                    Github.Don't use this site for illegal purposes.
+                className={"w-full h-[200px] lg:h-[128px] px-[56px] pt-[40px] flex flex-col lg:flex-row items-center align-middle justify-center lg:space-x-[16px]"}>
+                <text className={"font-['Noto_Sans_JP'] text-black text-[16px] font-medium"}>The site is deployed on vercel via Github. Do not use this site for illegal purposes.
                 </text>
-                <div className={"flex cursor-pointer"} onClick={() => router.push('https://nextjs.org/')}>
-                    <text
-                        className={"font-['Noto_Sans_JP'] text-black text-[20px] font-medium underline "}
-                    >Next.js
+                <div className={"max-lg:w-full h-[72px] lg:h-[128px] flex flex-row items-center align-middle justify-center space-x-[16px]"}>
+                    <div className={"flex cursor-pointer"} onClick={() => router.push('https://nextjs.org/')}>
+                        <text
+                            className={"font-['Noto_Sans_JP'] text-black text-[18px] font-medium underline "}
+                        >Next.js
+                        </text>
+                    </div>
+                    <text className={"font-['Noto_Sans_JP'] text-black text-[18px] font-medium underline cursor-pointer"}
+                          onClick={() => router.push('https://vercel.com/')}>Vercel
+                    </text>
+                    <text className={"font-['Noto_Sans_JP'] text-black text-[18px] font-medium underline cursor-pointer"}
+                          onClick={() => router.push('https://motion.dev/')}>Framer motion
                     </text>
                 </div>
-                <text className={"font-['Noto_Sans_JP'] text-black text-[20px] font-medium underline cursor-pointer"}
-                      onClick={() => router.push('https://vercel.com/')}>Vercel
-                </text>
-                <text className={"font-['Noto_Sans_JP'] text-black text-[20px] font-medium underline cursor-pointer"}
-                      onClick={() => router.push('https://motion.dev/')}>Framer motion
-                </text>
+
             </div>
         </div>
 
