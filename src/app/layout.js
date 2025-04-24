@@ -10,10 +10,9 @@ export const metadata = {
 
 export const viewport = {
     width: "800",
-    maximumScale: 1,
-    userScalable: false,
-    // Also supported by less commonly used
-    // interactiveWidget: 'resizes-visual',
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
 };
 
 const spaceGrotesk = Space_Grotesk({
