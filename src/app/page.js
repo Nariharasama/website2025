@@ -440,40 +440,40 @@ export default function Home() {
                 <div
                     className={"w-full h-[1280px] sm:h-[2560px] flex flex-col align-middle items-center justify-center absolute top-0"}>
                     <div className={"w-full flex items-center align-middle flex-col absolute top-[320px] sm:top-[640px]"}>
-                        <div className={"w-[320px] sm:w-[660px] lg:w-[840px] h-full flex items-start align-middle flex-col"}>
+                        <div className={"w-[300px] sm:w-[660px] lg:w-[840px] h-full flex items-start align-middle flex-col"}>
                             <text className={"font-['Noto_Sans_JP'] text-black font-medium text-[16px] sm:text-[28px] lg:text-[32px]"}>私について
                             </text>
                             <text
                                 className={"font-['Noto_Sans_JP'] text-[#E60012] font-bold text-[18px] sm:text-[30px] lg:text-[36px]"}>デザインは、人々の生活に技術を活かせるために
                             </text>
-                            <div className={"w-full text-[40px] h-[40px] sm:h-[80px] "}></div>
-                            <text className={"font-['Noto_Sans_JP'] text-black font-regular text-[10px] sm:text-[20px]"}>はじめまして。
+                            <div className={"w-full text-[40px] h-[20px] sm:h-[80px] "}></div>
+                            <text className={"font-['Noto_Sans_JP'] text-black font-regular text-[12px] sm:text-[20px]"}>はじめまして。
                             </text>
                             <text
-                                className={"font-['Noto_Sans_JP'] font-regular text-[10px] sm:text-[20px]"}>私はNET技術を活用して、主にUI・UXを中心するデザイナーです。
+                                className={"font-['Noto_Sans_JP'] font-regular text-[12px] sm:text-[20px]"}>私はNET技術を活用して、主にUI・UXを中心するデザイナーです。
                             </text>
-                            <div className={"w-full h-[40px] sm:h-[80px] "}></div>
+                            <div className={"w-full h-[20px] sm:h-[80px] "}></div>
                             <text
-                                className={"font-['Noto_Sans_JP'] text-black font-regular text-[10px] sm:text-[20px]"}>Webデザイナーとして、大量のページ動画と効果を確実に表現するため、
-                            </text>
-                            <text
-                                className={"font-['Noto_Sans_JP'] font-regular text-[10px] sm:text-[20px]"}>Reactなどのプログラミングスキルを使って、プロトタイプを作成される。
-                            </text>
-                            <div className={"w-full h-[40px] sm:h-[80px] "}></div>
-                            <text
-                                className={"font-['Noto_Sans_JP'] text-black font-regular text-[10px] sm:text-[20px]"}>実際に、このページも自らデザインから作成まで作ったものです。
+                                className={"font-['Noto_Sans_JP'] text-black font-regular text-[12px] sm:text-[20px]"}>Webデザイナーとして、大量のページ動画と効果を確実に表現するため、
                             </text>
                             <text
-                                className={"font-['Noto_Sans_JP'] font-regular text-[10px] sm:text-[20px]"}>ドメイン名購入以外完全に無料となります。
+                                className={"font-['Noto_Sans_JP'] font-regular text-[12px] sm:text-[20px]"}>Reactなどのプログラミングスキルを使って、プロトタイプを作成される。
                             </text>
-                            <div className={"w-full h-[40px] sm:h-[80px] "}></div>
+                            <div className={"w-full h-[20px] sm:h-[80px] "}></div>
                             <text
-                                className={"font-['Noto_Sans_JP'] text-black font-regular text-[10px] sm:text-[20px]"}>このように、自分の発想をできるだけ詳しく伝えるように、
+                                className={"font-['Noto_Sans_JP'] text-black font-regular text-[12px] sm:text-[20px]"}>実際に、このページも自らデザインから作成まで作ったものです。
                             </text>
                             <text
-                                className={"font-['Noto_Sans_JP'] font-regular text-[10px] sm:text-[20px]"}> みんなの生活に直接に関わるデザインをしています。
+                                className={"font-['Noto_Sans_JP'] font-regular text-[12px] sm:text-[20px]"}>ドメイン名購入以外完全に無料となります。
                             </text>
-                            <div className={"w-full h-[40px] sm:h-[80px] "}></div>
+                            <div className={"w-full h-[20px] sm:h-[80px] "}></div>
+                            <text
+                                className={"font-['Noto_Sans_JP'] text-black font-regular text-[12px] sm:text-[20px]"}>このように、自分の発想をできるだけ詳しく伝えるように、
+                            </text>
+                            <text
+                                className={"font-['Noto_Sans_JP'] font-regular text-[12px] sm:text-[20px]"}> みんなの生活に直接に関わるデザインをしています。
+                            </text>
+                            <div className={"w-full h-[20px] sm:h-[80px] "}></div>
                             <text
                                 className={"font-['Noto_Sans_JP'] text-black font-bold text-[18px] sm:text-[24px] underline hover:text-red1 cursor-pointer" } onClick={() => router.push('https://github.com/Nariharasama/website2025')}>More
                                 about
@@ -482,20 +482,20 @@ export default function Home() {
                         </div>
                     </div>
                     <div className={"w-full flex items-center align-middle flex-col absolute top-[1020px] sm:top-[2040px]"}>
-                        <div className={"w-[320px] sm:w-[660px] lg:w-[840px] h-full flex items-end align-middle flex-col"}>
+                        <div className={"w-[300px] sm:w-[660px] lg:w-[840px] h-full flex items-end align-middle flex-col"}>
                             <text className={"font-['Noto_Sans_JP'] text-black font-medium text-[16px] sm:text-[28px] lg:text-[32px]"}>プロジェクト
                             </text>
                             <text
                                 className={"font-['Noto_Sans_JP'] text-[#E60012] font-bold text-[18px] sm:text-[30px] lg:text-[36px]"}>誰でも使える技術に
                             </text>
-                            <div className={"w-full h-[40px] sm:h-[80px] "}></div>
+                            <div className={"w-full h-[20px] sm:h-[80px] "}></div>
                             <text
-                                className={"font-['Noto_Sans_JP'] text-black font-regular text-[10px] sm:text-[20px]"}>新世代の技術力をみんなの生活に送って、人々のためのデザインです。
+                                className={"font-['Noto_Sans_JP'] text-black font-regular text-[14px] sm:text-[20px]"}>新世代の技術力をみんなの生活に送って、人々のためのデザインです。
                             </text>
                             <text
-                                className={"font-['Noto_Sans_JP'] font-regular text-[10px] sm:text-[20px]"}>誰でもいつでも快適的に利用できるように、技術と生活の切り口を探します。
+                                className={"font-['Noto_Sans_JP'] font-regular text-[14px] sm:text-[20px]"}>誰でもいつでも快適的に利用できるように、技術と生活の切り口を探します。
                             </text>
-                            <div className={"w-full h-[40px] sm:h-[80px] "}></div>
+                            <div className={"w-full h-[20px] sm:h-[80px] "}></div>
                             <text
                                 className={"font-['Noto_Sans_JP'] text-black font-bold text-[24px] underline hover:text-red1 cursor-pointer"} onClick={() => router.push('https://drive.google.com/file/d/1RI9PfXnHIK7vozuW1ZiZ7NO80lSLa-J1/view?usp=drive_link')}>Portofolio
                             </text>
