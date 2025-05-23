@@ -1,7 +1,6 @@
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import TopLogo from "@/app/TopLogo";
-import localFont from 'next/font/local'
 import {Noto_Sans_JP} from "next/font/google";
 
 export const metadata = {
