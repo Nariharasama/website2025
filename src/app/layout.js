@@ -2,6 +2,7 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import TopLogo from "@/app/TopLogo";
 import {Noto_Sans_JP} from "next/font/google";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata = {
   title: "design-hu",
@@ -30,6 +31,7 @@ export default function Layout({ children }) {
   return (
     <html lang="en"  className={`${notoSans.variable}`}>
     <body className={"flex h-full w-full"}>
+    <Analytics/>
     <TopLogo/>
         {children}
       </body>
