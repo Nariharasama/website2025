@@ -497,7 +497,7 @@ export default function Home() {
                             </text>
                             <div className={"w-full h-[20px] sm:h-[80px] "}></div>
                             <text
-                                className={"font-['Noto_Sans_JP'] text-black font-bold text-[24px] underline hover:text-red1 cursor-pointer"} onClick={() => router.push('https://drive.google.com/file/d/16q3I-RIwjFkDjoQ8Y55fKBLFsUdoPn0M/view?usp=drive_link')}>Portofolio
+                                className={"font-['Noto_Sans_JP'] text-black font-bold text-[24px] underline hover:text-red1 cursor-pointer"} onClick={() => router.push('https://drive.google.com/file/d/1tmA2esynpguuNTqGusNaWWQ56Hti60tX/view?usp=drive_link')}>Portofolio
                             </text>
 
 
